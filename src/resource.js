@@ -59,6 +59,11 @@ function opts(action, args) {
     }
 
     options.body = body;
+    
+    if(params.responseType) {
+        options.responseType = params.responseType;
+        delete params.responseType;
+    }
     options.params = assign({}, options.params, params);
 
     return options;
